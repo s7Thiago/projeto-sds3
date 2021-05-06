@@ -1,5 +1,7 @@
 package com.thiagosilva.tsvendas.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.thiagosilva.tsvendas.dto.SaleDTO;
+import com.thiagosilva.tsvendas.dto.SaleSumDTO;
 import com.thiagosilva.tsvendas.entities.Sale;
 import com.thiagosilva.tsvendas.repositories.SaleRepository;
 import com.thiagosilva.tsvendas.repositories.SellerRepository;
@@ -37,6 +40,11 @@ public class SaleService {
 //		Pega a cada x do tipo Sale em result e retorna em, uma nova lista cujos elementos foram convertidos
 //		para uma página de elementos do tipo SaleDTO
 		return result.map(x -> new SaleDTO(x));  
+	}
+	
+	@Transactional(readOnly = true)
+	public List<SaleSumDTO> amountGroupedBySeller(){
+		return repository.amountGroupedBySeller(); 
 	}
 
 }
