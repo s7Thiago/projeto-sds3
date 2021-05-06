@@ -6,23 +6,23 @@ import com.thiagosilva.tsvendas.entities.Seller;
 
 public class SaleSumDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private String saleName;
+	private String sellerName;
 	private Double sum;
 	
 	public SaleSumDTO() {
 	}
 
 	public SaleSumDTO(Seller seller,  Double sum) {
-		this.saleName = seller.getName();
+		this.sellerName = seller.getName();
 		this.sum = sum;
 	}
 
 	public String getSaleName() {
-		return saleName;
+		return sellerName;
 	}
 
 	public void setSaleName(String saleName) {
-		this.saleName = saleName;
+		this.sellerName = saleName;
 	}
 
 	public Double getSum() {
