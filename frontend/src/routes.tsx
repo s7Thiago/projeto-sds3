@@ -1,5 +1,5 @@
-import DashboardPage from "pages/Dashboard";
-import HomePage from "pages/Home";
+import DashboardPage from "pages/Dashboard/dashboard_page";
+import HomePage from "pages/Home/home_page";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 
